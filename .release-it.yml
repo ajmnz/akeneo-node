@@ -7,6 +7,5 @@ hooks:
     - yarn lint
     - yarn format
     - yarn typecheck
-    - yarn test
     - yarn clean
     - yarn build
