@@ -16,7 +16,6 @@
     "outDir": "dist",
     "rootDir": "src",
     "noEmit": false,
-    "composite": true,
     "lib": ["dom", "ES6"]
   },
   "include": ["src"],
