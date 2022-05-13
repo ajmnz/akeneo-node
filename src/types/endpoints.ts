@@ -98,6 +98,14 @@ export type Endpoints = {
       };
       response: {};
     };
+
+    /**
+     * Delete a product
+     */
+    DELETE: {
+      body: {};
+      response: {};
+    };
   };
 
   "/media-files": {

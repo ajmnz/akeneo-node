@@ -75,6 +75,16 @@ export class AkeneoClient extends AkeneoCore {
      */
     getMany: (data: Endpoints["/products"]["GET"]["body"]) =>
       this.request("/products", "GET", this.formatSearch(data)),
+
+    /**
+     * Delete a product
+     *
+     * @see https://api.akeneo.com/api-reference.html#delete_products__code_
+     */
+    delete: (code: string) =>
+      this.request("/products/:code", "DELETE", {
+        realUrl: `/products/${code}`,
+      }),
   };
 
   /**
