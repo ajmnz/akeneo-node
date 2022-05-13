@@ -22,7 +22,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf -rf dist tsconfig.tsbuildinfo",
-    "publish": "release-it --",
+    "release": "release-it",
     "lint": "eslint --ext=ts src",
     "format": "prettier --write \"./src/**/*.ts\"",
     "typecheck": "tsc --noEmit"
