@@ -1,6 +1,6 @@
 {
   "name": "akeneo-node",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "ajmnz <arnau@ajb.cat>",
@@ -23,6 +23,7 @@
     "build": "tsc",
     "clean": "rimraf -rf dist tsconfig.tsbuildinfo",
     "release": "release-it",
+    "release:noclean": "yarn release --no-git.requireCleanWorkingDir",
     "lint": "eslint --ext=ts src",
     "format": "prettier --write \"./src/**/*.ts\"",
     "typecheck": "tsc --noEmit"
