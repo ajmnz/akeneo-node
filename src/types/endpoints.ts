@@ -6,7 +6,7 @@ import {
   AttributeType,
   ProductCreateBody,
 } from "./body";
-import { BasePaginatedResponse, LinkedData } from "./response";
+import { BasePaginatedResponse, ChannelResponse, LinkedData } from "./response";
 
 export type Endpoints = {
   "/products": {
@@ -235,6 +235,16 @@ export type Endpoints = {
         data: AkeneoCollection;
       };
       response: AkeneoCollection;
+    };
+  };
+
+  "/channels/:code": {
+    /**
+     * Get a channel
+     */
+    GET: {
+      body: {};
+      response: ChannelResponse;
     };
   };
 };

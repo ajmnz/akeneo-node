@@ -40,3 +40,12 @@ export type LinkedData = {
     ];
   };
 };
+
+export type ChannelResponse = {
+  code: string;
+  currencies: string[];
+  locales: string[];
+  category_tree: string;
+  conversion_units: Record<string, string>;
+  labels: Record<string, string>;
+};

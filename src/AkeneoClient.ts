@@ -264,4 +264,21 @@ export class AkeneoClient extends AkeneoCore {
       }>(response);
     },
   };
+
+  /**
+   * Channels
+   *
+   * @see https://api.akeneo.com/api-reference.html#Channel
+   */
+  public channel = {
+    /**
+     * Get a channel
+     *
+     * @see https://api.akeneo.com/api-reference.html#get_channels__code_
+     */
+    getOne: (data: { code: string }) =>
+      this.request("/channels/:code", "GET", {
+        realUrl: `/channels/${data.code}`,
+      }),
+  };
 }
