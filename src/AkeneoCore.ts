@@ -137,9 +137,9 @@ export class AkeneoCore {
    * Converts an Akeneo collection to an array of objects.
    */
   protected collectionToArray<T extends Record<string, unknown>>(
-    coll: AkeneoCollection
+    coll?: AkeneoCollection
   ): T[] {
-    return coll.split("\n").map((e) => JSON.parse(e)) as T[];
+    return coll?.split("\n").map((e) => JSON.parse(e)) ?? [];
   }
 
   /**
