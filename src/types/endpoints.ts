@@ -253,6 +253,22 @@ export type Endpoints = {
     };
   };
 
+  "/categories/:code": {
+    /**
+     * Get a category
+     */
+    GET: {
+      body: {};
+      response: {
+        code: string;
+        parent: string | null;
+        updated: string;
+        position?: number;
+        labels: Record<string, string>;
+      };
+    };
+  };
+
   "/channels/:code": {
     /**
      * Get a channel

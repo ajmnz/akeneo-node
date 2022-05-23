@@ -251,6 +251,16 @@ export class AkeneoClient extends AkeneoCore {
    */
   public category = {
     /**
+     * Get a category
+     *
+     * @see https://api.akeneo.com/api-reference.html#get_categories__code_
+     */
+    getOne: (data: { code: string }) =>
+      this.request("/categories/:code", "GET", {
+        realUrl: `/categories/${data.code}`,
+      }),
+
+    /**
      * Update/create several categories
      *
      * @see https://api.akeneo.com/api-reference.html#patch_categories
