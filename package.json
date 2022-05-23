@@ -22,7 +22,11 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf -rf dist tsconfig.tsbuildinfo",
-    "release": "release-it",
+    "prerelease": "yarn prerelease:npm && yarn prerelease:github",
+    "prerelease:npm": "release-it --preReleaseId=beta --npm.tag=beta",
+    "prerelease:github": "release-it --preReleaseId=beta --no-npm --no-git.requireCleanWorkingDir",
+    "release": "yarn release:npm && yarn release:github",
+    "release:npm": "release-it",
     "release:github": "yarn release --no-git.requireCleanWorkingDir --no-npm",
     "lint": "eslint --ext=ts src",
     "format": "prettier --write \"./src/**/*.ts\"",
