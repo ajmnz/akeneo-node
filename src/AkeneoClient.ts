@@ -189,6 +189,15 @@ export class AkeneoClient extends AkeneoCore {
    */
   public attributeOption = {
     /**
+     * Get an attribute option
+     *
+     * @see https://api.akeneo.com/api-reference.html#get_attributes__attribute_code__options__code_
+     */
+    getOne: (data: { attributeCode: string; code: string }) =>
+      this.request("/attributes/:attributeCode/options/:code", "GET", {
+        realUrl: `/attributes/${data.attributeCode}/options/${data.code}`,
+      }),
+    /**
      * Update/create several attribute options
      *
      * @see https://api.akeneo.com/api-reference.html#patch_attributes__attribute_code__options

@@ -219,10 +219,25 @@ export type Endpoints = {
           };
           code: string;
           attribute: string;
-          sort_ordeR: number;
+          sort_order: number;
           labels: Record<string, string>;
         }[];
       }>;
+    };
+  };
+
+  "/attributes/:attributeCode/options/:code": {
+    /**
+     * Get an attribute option
+     */
+    GET: {
+      body: {};
+      response: {
+        code: string;
+        attribute: string;
+        sort_order: number;
+        labels: Record<string, string>;
+      };
     };
   };
 
