@@ -1,6 +1,6 @@
 {
   "name": "akeneo-node",
-  "version": "0.0.5-beta.1",
+  "version": "0.0.5",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "ajmnz <arnau@ajb.cat>",
@@ -27,7 +27,7 @@
     "prerelease:github": "release-it --preReleaseId=beta --no-npm --no-git.requireCleanWorkingDir",
     "release": "yarn release:npm && yarn release:github",
     "release:npm": "release-it",
-    "release:github": "yarn release --no-git.requireCleanWorkingDir --no-npm",
+    "release:github": "release-it --no-git.requireCleanWorkingDir --no-npm",
     "lint": "eslint --ext=ts src",
     "format": "prettier --write \"./src/**/*.ts\"",
     "typecheck": "tsc --noEmit"
