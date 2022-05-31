@@ -243,6 +243,28 @@ export type Endpoints = {
 
   "/categories": {
     /**
+     * Get list of categories
+     */
+    GET: {
+      body: {
+        params?: AkeneoFilters;
+      };
+      response: BasePaginatedResponse<{
+        items: {
+          _links: {
+            self: {
+              href: string;
+            };
+          };
+          code: string;
+          parent: string | null;
+          updated: string;
+          labels: Record<string, string>;
+        }[];
+      }>;
+    };
+
+    /**
      * Update/create several categories
      */
     PATCH: {

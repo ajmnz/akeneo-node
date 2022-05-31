@@ -238,7 +238,7 @@ export class AkeneoClient extends AkeneoCore {
     ) => {
       const { attributeCode, ...cleanData } = data;
       return this.request("/attributes/:code/options", "GET", {
-        ...cleanData,
+        ...this.formatSearch(cleanData),
         realUrl: `/attributes/${attributeCode}/options`,
       });
     },
@@ -259,6 +259,14 @@ export class AkeneoClient extends AkeneoCore {
       this.request("/categories/:code", "GET", {
         realUrl: `/categories/${data.code}`,
       }),
+
+    /**
+     * Get list of categories
+     *
+     * @see https://api.akeneo.com/api-reference.html#get_categories
+     */
+    getMany: (data?: Endpoints["/categories"]["GET"]["body"]) =>
+      this.request("/categories", "GET", data ? this.formatSearch(data) : {}),
 
     /**
      * Update/create several categories
