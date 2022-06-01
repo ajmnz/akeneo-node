@@ -6,7 +6,11 @@ import {
   AttributeType,
   ProductCreateBody,
 } from "./body";
-import { BasePaginatedResponse, ChannelResponse, LinkedData } from "./response";
+import {
+  BasePaginatedResponse,
+  ChannelResponse,
+  ProductResponse,
+} from "./response";
 
 export type Endpoints = {
   "/products": {
@@ -44,43 +48,7 @@ export type Endpoints = {
           with_completeness?: boolean;
         };
       };
-      response: BasePaginatedResponse<{
-        items: {
-          _links: {
-            self: {
-              href: string;
-            };
-          };
-          identifier: string;
-          enabled: boolean;
-          family: string;
-          categories: string[];
-          groups: string[];
-          parent: string;
-          values: Record<
-            string,
-            {
-              scope: string | null;
-              locale: string | null;
-              data: string | Record<string, unknown>;
-              linked_data?: LinkedData;
-            }[]
-          >;
-          associations: Record<
-            string,
-            { groups: string[]; products: string[]; product_models: string[] }
-          >;
-          quantified_associations: Record<
-            string,
-            {
-              products: Record<string, unknown>[];
-              product_models: Record<string, unknown>[];
-            }
-          >;
-          created: string;
-          updated: string;
-        }[];
-      }>;
+      response: BasePaginatedResponse<ProductResponse>;
     };
   };
 
