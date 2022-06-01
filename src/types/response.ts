@@ -58,39 +58,37 @@ export type ProductValueData =
   | { amount: string; currency: string }[];
 
 export type ProductResponse = {
-  items: {
-    _links: {
-      self: {
-        href: string;
-      };
+  _links: {
+    self: {
+      href: string;
     };
-    identifier: string;
-    enabled: boolean;
-    family: string;
-    categories: string[];
-    groups: string[];
-    parent: string;
-    values: Record<
-      string,
-      {
-        scope: string | null;
-        locale: string | null;
-        data: ProductValueData;
-        linked_data?: LinkedData;
-      }[]
-    >;
-    associations: Record<
-      string,
-      { groups: string[]; products: string[]; product_models: string[] }
-    >;
-    quantified_associations: Record<
-      string,
-      {
-        products: Record<string, unknown>[];
-        product_models: Record<string, unknown>[];
-      }
-    >;
-    created: string;
-    updated: string;
   };
+  identifier: string;
+  enabled: boolean;
+  family: string;
+  categories: string[];
+  groups: string[];
+  parent: string;
+  values: Record<
+    string,
+    {
+      scope: string | null;
+      locale: string | null;
+      data: ProductValueData;
+      linked_data?: LinkedData;
+    }[]
+  >;
+  associations: Record<
+    string,
+    { groups: string[]; products: string[]; product_models: string[] }
+  >;
+  quantified_associations: Record<
+    string,
+    {
+      products: Record<string, unknown>[];
+      product_models: Record<string, unknown>[];
+    }
+  >;
+  created: string;
+  updated: string;
 };

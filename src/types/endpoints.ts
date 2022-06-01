@@ -48,7 +48,7 @@ export type Endpoints = {
           with_completeness?: boolean;
         };
       };
-      response: BasePaginatedResponse<ProductResponse[]>;
+      response: BasePaginatedResponse<{ items: ProductResponse }>;
     };
   };
 
