@@ -64,7 +64,7 @@ export type Endpoints = {
           with_completeness?: boolean;
         };
       };
-      response: {};
+      response: Omit<ProductResponse, "_links">;
     };
 
     /**
