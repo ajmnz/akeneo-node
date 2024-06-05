@@ -85,7 +85,7 @@ export type ProductResponse = {
   quantified_associations: Record<
     string,
     {
-      products: Record<string, unknown>[];
+      products: { identifier: string; quantity: number }[];
       product_models: Record<string, unknown>[];
     }
   >;
