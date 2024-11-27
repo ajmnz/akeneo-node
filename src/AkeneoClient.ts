@@ -308,4 +308,29 @@ export class AkeneoClient extends AkeneoCore {
         realUrl: `/channels/${data.code}`,
       }),
   };
+
+  /**
+   * Locales
+   *
+   * @see https://api.akeneo.com/api-reference.html#Locale
+   */
+  public locale = {
+    /**
+     * Get a list of locales
+     *
+     * @see https://api.akeneo.com/api-reference-60.html#get_locales
+     */
+    getMany: (data?: Endpoints["/locales"]["GET"]["body"]) =>
+      this.request("/locales", "GET", data ? this.formatSearch(data) : {}),
+
+    /**
+     * Get a locale
+     *
+     * @see https://api.akeneo.com/api-reference-60.html#get_locales__code_
+     */
+    getOne: (data: { code: string }) =>
+      this.request("/locales/:code", "GET", {
+        realUrl: `/locales/${data.code}`,
+      }),
+  };
 }

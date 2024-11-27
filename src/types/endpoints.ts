@@ -268,4 +268,35 @@ export type Endpoints = {
       response: ChannelResponse;
     };
   };
+
+  "/locales": {
+    /**
+     * Get a list of locales
+     */
+    GET: {
+      body: {
+        params?: Pick<
+          AkeneoFilters,
+          "search" | "page" | "limit" | "with_count"
+        >;
+      };
+      response: BasePaginatedResponse<{
+        items: {
+          _links: { self: { href: string } };
+          code: string;
+          enabled: boolean;
+        }[];
+      }>;
+    };
+  };
+
+  "/locales/:code": {
+    /**
+     * Get a locale by code
+     */
+    GET: {
+      body: {};
+      response: { code: string; enabled: boolean };
+    };
+  };
 };

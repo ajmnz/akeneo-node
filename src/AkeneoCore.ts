@@ -93,7 +93,7 @@ export class AkeneoCore {
 
     if (this.config.debug) {
       // eslint-disable-next-line no-console
-      console.log(`[Akeneo] ${method} ${realUrl || apiPath}`);
+      console.log(`[Akeneo] ${method.toString()} ${realUrl || apiPath}`);
     }
 
     try {
