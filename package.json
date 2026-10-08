@@ -2,12 +2,32 @@
   "name": "akeneo-node",
   "version": "0.0.12",
   "main": "dist/index.js",
+  "module": "index.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./index.mjs",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./dist/types": {
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/types/index.js"
+    },
+    "./dist/*.js": "./dist/*.js",
+    "./dist/*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
   "author": "ajmnz <arnau@ajb.cat>",
   "license": "MIT",
   "description": "Type-safe Node.js client for the Akeneo PIM REST API",
   "files": [
-    "dist"
+    "dist",
+    "index.mjs"
   ],
   "repository": {
     "type": "git",
